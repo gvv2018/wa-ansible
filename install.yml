@@ -1,0 +1,6 @@
+---
+- name: NTP client configure
+  hosts: second
+  roles:
+    - ansible-role-ntp
+

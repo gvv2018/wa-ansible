@@ -1,0 +1,3 @@
+---
+ansible_user: root
+ansible_private_key_file: key/id_rsa
