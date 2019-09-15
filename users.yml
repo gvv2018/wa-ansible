@@ -1,6 +1,6 @@
 ---
 
-- name: Del users
+- name: Del users lab
   hosts: all
   vars:
     users_deleted:
@@ -9,7 +9,7 @@
   roles:
     - users
 
-- name: Del users
+- name: Del users labsudo
   hosts: all
   vars:
     users_deleted:
