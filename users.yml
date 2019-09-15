@@ -1,4 +1,24 @@
 ---
+
+- name: Del users
+  hosts: all
+  vars:
+    users_deleted:
+      - username: lab
+
+  roles:
+    - users
+
+- name: Del users
+  hosts: all
+  vars:
+    users_deleted:
+      - username: labsudo
+
+  roles:
+    - users
+
+
 - name: Add user lab
   hosts: all
   vars:
@@ -11,6 +31,7 @@
         #uid: 2222
         groups: [lab]
         shell: /bin/sh
+        password: $6$gIf3NDm7$m607sX5AO8emZcEoj8VT6jZdE.eQ2XTQaGRx.B6ItsSjxgVIGHBf4siWFo6WE9Tn15rBnRUtD1MBSy8.qFS.s.
         profile: |
           alias ll='ls -lah'
           alias cp='cp -iv'
@@ -33,6 +54,7 @@
         #uid: 2223
         groups: [labsudo, sudo]
         shell: /bin/bash
+        password: $6$gIf3NDm7$m607sX5AO8emZcEoj8VT6jZdE.eQ2XTQaGRx.B6ItsSjxgVIGHBf4siWFo6WE9Tn15rBnRUtD1MBSy8.qFS.s.
         profile: |
           alias ll='ls -lah'
           alias cp='cp -iv'
