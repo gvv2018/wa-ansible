@@ -1,0 +1,25 @@
+---
+- name: Logrotate
+  hosts: second
+#  become: True
+  vars:
+    logrotate_scripts:
+      - name: apache2
+        path: /var/log/apache2/*.log
+        options:
+          - daily
+          - size 25M
+          - rotate 7
+          - compress
+
+#      - name: syslog
+#        path: /var/log/syslog
+#        options:
+#          - daily
+#          - size 25M
+#          - rotate 7
+#          - compress
+
+  roles:
+    - logrotate
+

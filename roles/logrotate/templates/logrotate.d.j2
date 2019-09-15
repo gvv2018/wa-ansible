@@ -1,7 +1,7 @@
 # {{ ansible_managed }}
 
 {% if 'path' in item %}
-"{{ item.path }}"
+{{ item.path }}
 {% elif 'paths' in item %}
 {% for path in item.paths %}
 "{{ path }}"

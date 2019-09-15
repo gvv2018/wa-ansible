@@ -1,0 +1,43 @@
+---
+- name: Add user lab
+  hosts: all
+  vars:
+    groups_to_create:
+      - name: lab
+        #gid: 4000
+    users:
+      - name: Lab user
+        username: lab
+        #uid: 2222
+        groups: [lab]
+        shell: /bin/sh
+        profile: |
+          alias ll='ls -lah'
+          alias cp='cp -iv'
+        ssh_key:
+          - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7mRWABq+R4wR+HJNlxEqagsmoznCzC7NDUUVelJnmpW1P+Ulgfwzq4l3P8pyr6ZO+85HA2eS8EYZbjAus5Y8OA5ifWV2+vGwlSuIGdOL4RJOX8+6TvXaLZRwQ8Rd7W1rkTvuSBz40NdjZ4pB7BrwgfxogUhLtqNTM9T6ijUPXxjf1ASRnGrOf/PP/fDYNzgPkkuQ25zmAvhqxTXPAfVlsf4EDUlb9IFyHHs/ar9tFWZc9P5iD/FvE/sPQM2p/6Y+FqeUGtdMEU2djnXsU143pxy7RPp5QMdGaD1/+KnCkQRVD1KfdI6Ixt5+Wh2sogmcyYU1TNiXS//beUFLUOixr administrator@Ubuntu-desktop"
+
+  roles:
+    - users
+
+
+- name: Add user labsudo
+  hosts: all
+  vars:
+    groups_to_create:
+      - name: labsudo
+        #gid: 4001
+    users:
+      - name: Labsudo user
+        username: labsudo
+        #uid: 2223
+        groups: [labsudo, sudo]
+        shell: /bin/bash
+        profile: |
+          alias ll='ls -lah'
+          alias cp='cp -iv'
+        ssh_key:
+          - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7mRWABq+R4wR+HJNlxEqagsmoznCzC7NDUUVelJnmpW1P+Ulgfwzq4l3P8pyr6ZO+85HA2eS8EYZbjAus5Y8OA5ifWV2+vGwlSuIGdOL4RJOX8+6TvXaLZRwQ8Rd7W1rkTvuSBz40NdjZ4pB7BrwgfxogUhLtqNTM9T6ijUPXxjf1ASRnGrOf/PP/fDYNzgPkkuQ25zmAvhqxTXPAfVlsf4EDUlb9IFyHHs/ar9tFWZc9P5iD/FvE/sPQM2p/6Y+FqeUGtdMEU2djnXsU143pxy7RPp5QMdGaD1/+KnCkQRVD1KfdI6Ixt5+Wh2sogmcyYU1TNiXS//beUFLUOixr administrator@Ubuntu-desktop"
+
+  roles:
+    - users
