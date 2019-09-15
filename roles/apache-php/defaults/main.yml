@@ -1,0 +1,7 @@
+---
+# defaults file for apache-php
+apache_service: apache2
+apache_conf_path: /etc/apache2
+apache_liset_port: 80
+vhost_servername: "12e.lab.int"
+vhost_documentroot: "/var/www/html"

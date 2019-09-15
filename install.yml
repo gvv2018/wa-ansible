@@ -1,6 +1,7 @@
 ---
-- name: NTP client configure
+- name: Install and configure package
   hosts: second
   roles:
-    - ansible-role-ntp
+#    - ansible-role-ntp
+#    - apache-php
 
