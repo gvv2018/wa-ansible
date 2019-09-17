@@ -1,0 +1,6 @@
+---
+
+- name: Install GIT
+  hosts: work-servers
+  roles: 
+    - git
