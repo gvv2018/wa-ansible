@@ -1,0 +1,16 @@
+---
+- hosts: work-servers
+#  become: true
+  tasks:
+    - name: Create User
+      user: name=bender password=robots
+
+    - name: Update and upgrade apt packages
+      apt:
+         name: "{{ item }}"
+        state: present
+        update_cache: yes
+      with_items:
+         - vim
+         - git
+         - htop
