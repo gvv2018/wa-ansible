@@ -2,6 +2,8 @@
 - name: Check Apache
   hosts: second
   become: yes
+  vars_files:
+    - secret
   tasks:
 #    - name: Check if {{ lookup('env','SERVICE_NAME') }}
     - name: Check if {{ SERVICE_NAME }}
