@@ -1,11 +1,11 @@
 ---
 # tasks file for apache-php
 
-- name: Install Apache server
-  apt:
-    name: apache2
-    state: present
-    update_cache: yes
+#- name: Install Apache server
+#  apt:
+#    name: apache2
+#    state: present
+#    update_cache: yes
 
 - name: Install PHP module for Apache
   apt:
@@ -13,24 +13,24 @@
     state: present
     update_cache: yes
 
-- name: Copy Apache vhosts configuration files
-  template:
-    src: vhost.conf.j2
-    dest: "{{ apache_conf_path }}/sites-available/vhost.conf"
-  notify: Restart Apache
+#- name: Copy Apache vhosts configuration files
+#  template:
+#    src: vhost.conf.j2
+#    dest: "{{ apache_conf_path }}/sites-available/vhost.conf"
+#  notify: Restart Apache
 
-- name: Create simlink
-  file:
-    src: "{{ apache_conf_path }}/sites-available/vhost.conf"
-    dest: "{{ apache_conf_path }}/sites-enabled/vhost.conf"
-    state: link
+#- name: Create simlink
+#  file:
+#    src: "{{ apache_conf_path }}/sites-available/vhost.conf"
+#    dest: "{{ apache_conf_path }}/sites-enabled/vhost.conf"
+#    state: link
 
-- name: Copy index.php with php_info
-  template:
-    src: index.php.j2
-    dest: "{{ vhost_documentroot }}/index.php"
+#- name: Copy index.php with php_info
+#  template:
+#    src: index.php.j2
+#    dest: "{{ vhost_documentroot }}/index.php"
 
-- name: Service Apache is enabled
-  service:
-    name: "{{ apache_service }}"
-    enabled: yes
+#- name: Service Apache is enabled
+#  service:
+#    name: "{{ apache_service }}"
+#    enabled: yes
