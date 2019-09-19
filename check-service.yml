@@ -1,8 +1,9 @@
 ---
 - name: Check Apache
-  hosts: all
+  hosts: second
   tasks:
-    - name: Check if {{ lookup('env','SERVICE_NAME') }}
-      shell: systemctl status {{ lookup('env','SERVICE_NAME') }}
+#    - name: Check if {{ lookup('env','SERVICE_NAME') }}
+    - name: Check if {{ SERVICE_NAME }}
+      shell: systemctl status {{ SERVICE_NAME }}
       register: svc_status
       failed_when: not(svc_status == 0)
