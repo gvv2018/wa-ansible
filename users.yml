@@ -2,6 +2,7 @@
 
 - name: Del users lab
   hosts: all
+  become: yes
   vars:
     users_deleted:
       - username: lab
@@ -11,6 +12,7 @@
 
 - name: Del users labsudo
   hosts: all
+  become: yes
   vars:
     users_deleted:
       - username: labsudo
@@ -21,6 +23,7 @@
 
 - name: Add user lab
   hosts: all
+  become: yes
   vars:
     groups_to_create:
       - name: lab
@@ -44,6 +47,7 @@
 
 - name: Add user labsudo
   hosts: all
+  become: yes
   vars:
     groups_to_create:
       - name: labsudo

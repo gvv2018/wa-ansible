@@ -1,6 +1,7 @@
 ---
 - name: Logrotate
   hosts: second
+  become: yes
 #  become: True
   vars:
     logrotate_scripts:
@@ -22,4 +23,3 @@
 
   roles:
     - logrotate
-
