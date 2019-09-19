@@ -1,6 +1,6 @@
-[my-servers]
-12g.lab.int  
-12e.lab.int 
+[my_servers]
+12g.lab.int
+12e.lab.int
 12f.lab.int
 
 [first]
@@ -9,6 +9,6 @@
 [second]
 12e.lab.int
 
-[work-servers]
+[work_servers]
 12g.lab.int
 12e.lab.int
